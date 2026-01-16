@@ -18,9 +18,6 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
-	.text {
-	    color: #ffeb3b;
-	}
         /* Custom Scrollbar */
         .custom-scrollbar::-webkit-scrollbar {
             width: 6px;
@@ -66,14 +63,14 @@
                      class="quoc-huy w-10 h-10 md:w-14 md:h-14 object-contain drop-shadow-md">
                 
                 <!-- Title -->
-                <div class="text-[9px] md:text-xs lg:text-sm font-bold text uppercase text-center leading-tight">
+                <div class="text-[9px] md:text-xs lg:text-sm font-bold text-red-100 uppercase text-center leading-tight">
                     ỦY BAN BẦU CỬ <br> XÃ ĐƠN DƯƠNG
                 </div>
             </div>
 
             <!-- RIGHT COLUMN: Matches List width (flex-1) -->
             <div class="flex-1 p-2 md:p-4 flex items-center justify-center text-center">
-                <h1 class="text-xs md:text-lg lg:text-xl font-bold uppercase leading-tight text drop-shadow-md">
+                <h1 class="text-xs md:text-lg lg:text-xl font-bold uppercase leading-tight text-red-50 drop-shadow-md">
                     DANH SÁCH KHU VỰC BỎ PHIẾU QUỐC HỘI KHÓA XVI <br class="hidden md:block">
                     VÀ HĐND CÁC CẤP, NHIỆM KÌ 2026-2031
                 </h1>
@@ -376,13 +373,7 @@
             render();
             startAutoPlay(); // Reset timer khi người dùng tương tác
             
-            // Scroll to top of list on mobile when changing unit
-            if(window.innerWidth < 768) {
-                setTimeout(() => {
-                    const el = document.getElementById('locations-list');
-                    if(el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
-                }, 100);
-            }
+            // Removed auto-scroll logic as requested
         }
 
         function prevUnit() {
@@ -390,12 +381,7 @@
             render();
             startAutoPlay(); // Reset timer khi người dùng tương tác
 
-            if(window.innerWidth < 768) {
-                setTimeout(() => {
-                    const el = document.getElementById('locations-list');
-                    if(el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
-                }, 100);
-            }
+            // Removed auto-scroll logic as requested
         }
 
         function setUnit(index) {
